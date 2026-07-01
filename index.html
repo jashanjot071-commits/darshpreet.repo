@@ -1,0 +1,922 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Details by DK – Premium nail art & beauty services. Shop luxury nail products and book your next appointment.">
+<title>Details by DK | Luxury Nail Art & Beauty</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&family=Playfair+Display:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- TOAST CONTAINER -->
+<div id="toast-container"></div>
+
+<!-- SCROLL TO TOP -->
+<button class="scroll-top" id="scrollTop" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Scroll to top">↑</button>
+
+<!-- ============================
+     HEADER
+     ============================ -->
+<header id="mainHeader">
+  <nav class="container">
+    <div class="logo" onclick="showPage('home')" style="cursor:pointer">
+      Details by DK
+      <span>Luxury Nail Art</span>
+    </div>
+    <div class="nav-links">
+      <a href="#" onclick="showPage('home')" class="active" data-page="home">Home</a>
+      <a href="#" onclick="showPage('shop')" data-page="shop">Shop</a>
+      <a href="#" onclick="showPage('booking')" data-page="booking">Book Now</a>
+      <a href="#" onclick="showPage('about')" data-page="about">About</a>
+      <a href="#" onclick="showPage('contact')" data-page="contact">Contact</a>
+    </div>
+    <div class="nav-actions">
+      <button class="nav-icon-btn" onclick="showPage('wishlist')" title="Wishlist">
+        ♡
+        <span class="badge" id="wishlistBadge" style="display:none">0</span>
+      </button>
+      <button class="nav-icon-btn" onclick="showPage('cart')" title="Cart">
+        🛍
+        <span class="badge" id="cartBadge" style="display:none">0</span>
+      </button>
+      <button class="nav-icon-btn" onclick="showPage('auth')" title="Account" id="authBtn">👤</button>
+    </div>
+    <button class="hamburger" id="hamburger" onclick="toggleMobileNav()" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+</header>
+
+<!-- MOBILE NAV -->
+<div class="mobile-nav" id="mobileNav">
+  <a href="#" onclick="showPage('home');closeMobileNav()">Home</a>
+  <a href="#" onclick="showPage('shop');closeMobileNav()">Shop</a>
+  <a href="#" onclick="showPage('booking');closeMobileNav()">Book Now</a>
+  <a href="#" onclick="showPage('about');closeMobileNav()">About</a>
+  <a href="#" onclick="showPage('contact');closeMobileNav()">Contact</a>
+  <a href="#" onclick="showPage('wishlist');closeMobileNav()">Wishlist</a>
+  <a href="#" onclick="showPage('cart');closeMobileNav()">Cart</a>
+</div>
+
+<!-- ============================
+     HOME PAGE
+     ============================ -->
+<div id="page-home" class="page active">
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-content">
+      <div class="hero-tag fade-in fade-in-1">New Collection 2025</div>
+      <h1 class="fade-in fade-in-2">
+        Every Detail<br>
+        <em>Tells a Story</em>
+      </h1>
+      <p class="fade-in fade-in-3">Luxury nail art crafted with precision, passion, and an eye for the extraordinary. Because you deserve nothing less than perfection.</p>
+      <div class="hero-cta fade-in fade-in-4">
+        <button class="btn btn-primary" onclick="showPage('shop')">Shop Now →</button>
+        <button class="btn btn-outline" onclick="showPage('booking')">Book Appointment</button>
+      </div>
+      <div class="hero-stats fade-in fade-in-4">
+        <div class="stat-item">
+          <span class="stat-num">2K+</span>
+          <span class="stat-label">Happy Clients</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-num">150+</span>
+          <span class="stat-label">Designs</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-num">4.9★</span>
+          <span class="stat-label">Rating</span>
+        </div>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="hero-img-card" style="background:linear-gradient(135deg,var(--blush),var(--rose));">
+        <div style="width:100%;height:100%;display:flex;align-items:center;justify-content:center;font-size:6rem;">💅</div>
+        <div class="img-tag">French Tips</div>
+      </div>
+      <div class="hero-img-card" style="background:linear-gradient(135deg,var(--nude),var(--dusty-pink));">
+        <div style="width:100%;height:100%;display:flex;align-items:center;justify-content:center;font-size:6rem;">✨</div>
+        <div class="img-tag">Nail Art</div>
+      </div>
+      <div class="float-badge float-badge-1">
+        <span class="badge-icon">⭐</span>
+        <div class="badge-text">
+          <strong>Top Rated</strong>
+          <span>4.9 / 5.0</span>
+        </div>
+      </div>
+      <div class="float-badge float-badge-2">
+        <span class="badge-icon">🎀</span>
+        <div class="badge-text">
+          <strong>New Arrivals</strong>
+          <span>View Collection</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MARQUEE -->
+  <div class="marquee-strip">
+    <div class="marquee-track">
+      <span>Details by DK</span><span class="dot">✦</span>
+      <span>Luxury Nail Art</span><span class="dot">✦</span>
+      <span>Premium Products</span><span class="dot">✦</span>
+      <span>Book Your Appointment</span><span class="dot">✦</span>
+      <span>@detailsby_dk</span><span class="dot">✦</span>
+      <span>Crafted with Love</span><span class="dot">✦</span>
+      <span>Every Detail Matters</span><span class="dot">✦</span>
+      <span>Details by DK</span><span class="dot">✦</span>
+      <span>Luxury Nail Art</span><span class="dot">✦</span>
+      <span>Premium Products</span><span class="dot">✦</span>
+      <span>Book Your Appointment</span><span class="dot">✦</span>
+      <span>@detailsby_dk</span><span class="dot">✦</span>
+      <span>Crafted with Love</span><span class="dot">✦</span>
+      <span>Every Detail Matters</span><span class="dot">✦</span>
+    </div>
+  </div>
+
+  <!-- CATEGORIES -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-subtitle">Explore Our World</p>
+        <h2 class="section-title">Shop by Category</h2>
+      </div>
+      <div class="categories-grid">
+        <div class="cat-card cat-card-1" onclick="filterShop('Nail Art')">
+          <div class="cat-bg">💅</div>
+          <div class="cat-overlay"></div>
+          <div class="cat-content">
+            <div class="cat-name">Nail Art Kits</div>
+            <div class="cat-count">32 products</div>
+          </div>
+        </div>
+        <div class="cat-card cat-card-2" onclick="filterShop('Gel Polish')">
+          <div class="cat-bg">💅</div>
+          <div class="cat-overlay"></div>
+          <div class="cat-content">
+            <div class="cat-name">Gel Polish</div>
+            <div class="cat-count">48 shades</div>
+          </div>
+        </div>
+        <div class="cat-card cat-card-3" onclick="filterShop('Tools')">
+          <div class="cat-bg">🔧</div>
+          <div class="cat-overlay"></div>
+          <div class="cat-content">
+            <div class="cat-name">Pro Tools</div>
+            <div class="cat-count">24 items</div>
+          </div>
+        </div>
+        <div class="cat-card cat-card-4" onclick="filterShop('Press-On')">
+          <div class="cat-bg">✨</div>
+          <div class="cat-overlay"></div>
+          <div class="cat-content">
+            <div class="cat-name">Press-On Nails</div>
+            <div class="cat-count">60 sets</div>
+          </div>
+        </div>
+        <div class="cat-card cat-card-5" onclick="filterShop('Accessories')">
+          <div class="cat-bg">🎀</div>
+          <div class="cat-overlay"></div>
+          <div class="cat-content">
+            <div class="cat-name">Accessories</div>
+            <div class="cat-count">18 items</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURED PRODUCTS -->
+  <section class="section" style="background:var(--cream);padding:80px 0;">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-subtitle">Handpicked for You</p>
+        <h2 class="section-title">Featured Products</h2>
+        <p>Our most-loved nail essentials, curated for every style and occasion.</p>
+      </div>
+      <div class="products-grid" id="featuredProducts"></div>
+      <div style="text-align:center;margin-top:48px;">
+        <button class="btn btn-outline" onclick="showPage('shop')">View All Products →</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- BRAND STORY SNIPPET -->
+  <section class="section">
+    <div class="container">
+      <div class="brand-story">
+        <div class="brand-story-img"><span>💅</span></div>
+        <div class="brand-story-content">
+          <p class="section-subtitle">Our Story</p>
+          <h2 class="section-title">Born from a Love of Beautiful Details</h2>
+          <p>Details by DK started as a passion project — a deep love for nail art that turned into a full-blown obsession with perfection. Every brush stroke, every rhinestone, every gradient was practiced with dedication.</p>
+          <p>Today, we craft premium nail experiences that make you feel seen, celebrated, and undeniably glamorous.</p>
+          <div class="signature">— Dimple K.</div>
+          <button class="btn btn-rose" onclick="showPage('about')">Read Our Story</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- INSTAGRAM FEED -->
+  <section class="section testimonials-bg">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-subtitle">Follow Along</p>
+        <h2 class="section-title">Our Instagram</h2>
+      </div>
+      <div class="insta-grid">
+        <div class="insta-item" style="background:linear-gradient(135deg,var(--blush),var(--rose));">
+          <div class="insta-emoji">💅</div>
+          <div class="insta-overlay"><span>View Post</span></div>
+        </div>
+        <div class="insta-item" style="background:linear-gradient(135deg,var(--nude),var(--dusty-pink));">
+          <div class="insta-emoji">✨</div>
+          <div class="insta-overlay"><span>View Post</span></div>
+        </div>
+        <div class="insta-item" style="background:linear-gradient(135deg,var(--rose),var(--mauve));">
+          <div class="insta-emoji">🎀</div>
+          <div class="insta-overlay"><span>View Post</span></div>
+        </div>
+        <div class="insta-item" style="background:linear-gradient(135deg,var(--blush),var(--nude));">
+          <div class="insta-emoji">💎</div>
+          <div class="insta-overlay"><span>View Post</span></div>
+        </div>
+        <div class="insta-item" style="background:linear-gradient(135deg,#e8d5f5,#c9a8d4);">
+          <div class="insta-emoji">🌸</div>
+          <div class="insta-overlay"><span>View Post</span></div>
+        </div>
+        <div class="insta-item" style="background:linear-gradient(135deg,var(--dusty-pink),var(--mauve));">
+          <div class="insta-emoji">💅</div>
+          <div class="insta-overlay"><span>View Post</span></div>
+        </div>
+      </div>
+      <div class="insta-handle">
+        Follow us on Instagram <a href="https://instagram.com/detailsby_dk" target="_blank">@detailsby_dk</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-subtitle">Client Love</p>
+        <h2 class="section-title">What They're Saying</h2>
+      </div>
+      <div class="testimonials-grid">
+        <div class="testimonial-card">
+          <p class="testimonial-text">Absolutely obsessed with my nails! The attention to detail is unreal. I've been coming to DK for 8 months and I'll never go anywhere else.</p>
+          <div class="testimonial-author">
+            <div class="author-avatar">🌸</div>
+            <div>
+              <div class="author-name">Priya Sharma</div>
+              <div class="author-label">⭐⭐⭐⭐⭐ Verified Client</div>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <p class="testimonial-text">The press-on nails I ordered are genuinely the most realistic ones I've ever worn. So comfortable, lasted over 3 weeks. Will order again and again!</p>
+          <div class="testimonial-author">
+            <div class="author-avatar">💎</div>
+            <div>
+              <div class="author-name">Anika Mehra</div>
+              <div class="author-label">⭐⭐⭐⭐⭐ Verified Buyer</div>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <p class="testimonial-text">Details by DK is not just a nail brand, it's an experience. My wedding nails were absolutely perfect. Couldn't have asked for anything more magical.</p>
+          <div class="testimonial-author">
+            <div class="author-avatar">👑</div>
+            <div>
+              <div class="author-name">Riya Kapoor</div>
+              <div class="author-label">⭐⭐⭐⭐⭐ Bridal Client</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- NEWSLETTER -->
+  <section class="section">
+    <div class="container">
+      <div class="newsletter-section">
+        <p class="section-subtitle">Stay in the Loop</p>
+        <h2 class="section-title">Get 15% Off Your First Order</h2>
+        <p>Subscribe for exclusive offers, new arrivals, and nail inspo delivered to your inbox.</p>
+        <div class="newsletter-form">
+          <input type="email" placeholder="Your email address…" id="newsletterEmail">
+          <button class="btn btn-primary" onclick="subscribeNewsletter()">Subscribe</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="logo">Details by DK<span>Luxury Nail Art</span></div>
+          <p>Premium nail art and beauty products crafted with passion and precision. Because every detail tells your story.</p>
+          <div class="footer-social">
+            <a href="https://instagram.com/detailsby_dk" target="_blank" class="social-link" title="Instagram">📸</a>
+            <a href="#" class="social-link" title="WhatsApp">💬</a>
+            <a href="#" class="social-link" title="Pinterest">📌</a>
+            <a href="#" class="social-link" title="Facebook">📘</a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Shop</h4>
+          <ul>
+            <li><a href="#" onclick="showPage('shop')">All Products</a></li>
+            <li><a href="#" onclick="filterShop('Nail Art')">Nail Art Kits</a></li>
+            <li><a href="#" onclick="filterShop('Gel Polish')">Gel Polish</a></li>
+            <li><a href="#" onclick="filterShop('Press-On')">Press-On Nails</a></li>
+            <li><a href="#" onclick="filterShop('Tools')">Pro Tools</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Help</h4>
+          <ul>
+            <li><a href="#" onclick="showPage('about')">About Us</a></li>
+            <li><a href="#">FAQ</a></li>
+            <li><a href="#">Shipping Policy</a></li>
+            <li><a href="#">Returns</a></li>
+            <li><a href="#" onclick="showPage('contact')">Contact Us</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <div class="footer-contact">
+            <div class="contact-item">
+              <span class="icon">📍</span>
+              <span>Ludhiana, Punjab, India</span>
+            </div>
+            <div class="contact-item">
+              <span class="icon">📧</span>
+              <span>hello@detailsbydk.com</span>
+            </div>
+            <div class="contact-item">
+              <span class="icon">📱</span>
+              <span>+91 98765 43210</span>
+            </div>
+            <div class="contact-item">
+              <span class="icon">🕐</span>
+              <span>Mon–Sat: 10am – 7pm</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2025 Details by DK. All rights reserved.</span>
+        <div style="display:flex;gap:20px;">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+</div>
+
+<!-- ============================
+     SHOP PAGE
+     ============================ -->
+<div id="page-shop" class="page">
+  <div class="page-header">
+    <div class="container">
+      <p class="section-subtitle">Explore & Discover</p>
+      <h1 class="section-title">Our Collection</h1>
+      <p>Premium nail products, press-ons, tools & more</p>
+    </div>
+  </div>
+  <div class="container">
+    <div class="shop-layout">
+      <!-- Sidebar -->
+      <aside class="shop-sidebar">
+        <div class="filter-group">
+          <div class="filter-title">Category</div>
+          <div class="filter-options">
+            <label class="filter-option"><input type="checkbox" onchange="applyFilters()" value="Nail Art" class="cat-filter"> <label>Nail Art Kits</label></label>
+            <label class="filter-option"><input type="checkbox" onchange="applyFilters()" value="Gel Polish" class="cat-filter"> <label>Gel Polish</label></label>
+            <label class="filter-option"><input type="checkbox" onchange="applyFilters()" value="Press-On" class="cat-filter"> <label>Press-On Nails</label></label>
+            <label class="filter-option"><input type="checkbox" onchange="applyFilters()" value="Tools" class="cat-filter"> <label>Pro Tools</label></label>
+            <label class="filter-option"><input type="checkbox" onchange="applyFilters()" value="Accessories" class="cat-filter"> <label>Accessories</label></label>
+          </div>
+        </div>
+        <div class="filter-group">
+          <div class="filter-title">Price Range</div>
+          <div class="price-range">
+            <span style="font-size:0.78rem;color:var(--muted)">₹0</span>
+            <input type="range" min="0" max="2000" value="2000" id="priceRange" oninput="document.getElementById('priceVal').textContent='₹'+this.value;applyFilters()">
+            <span style="font-size:0.78rem;color:var(--muted)" id="priceVal">₹2000</span>
+          </div>
+        </div>
+        <div class="filter-group">
+          <div class="filter-title">Availability</div>
+          <div class="filter-options">
+            <label class="filter-option"><input type="checkbox" id="inStockFilter" onchange="applyFilters()"> <label>In Stock Only</label></label>
+            <label class="filter-option"><input type="checkbox" id="saleFilter" onchange="applyFilters()"> <label>On Sale</label></label>
+          </div>
+        </div>
+      </aside>
+      <!-- Products -->
+      <div>
+        <div class="shop-toolbar">
+          <div class="toolbar-left">
+            <button class="filter-pill active" onclick="setActiveSort(this,'all')">All</button>
+            <button class="filter-pill" onclick="setActiveSort(this,'new')">New Arrivals</button>
+            <button class="filter-pill" onclick="setActiveSort(this,'popular')">Popular</button>
+            <button class="filter-pill" onclick="setActiveSort(this,'sale')">On Sale</button>
+          </div>
+          <div style="display:flex;align-items:center;gap:16px;">
+            <span class="results-count" id="resultsCount">Showing 0 products</span>
+            <select class="sort-select" onchange="sortProducts(this.value)">
+              <option value="default">Sort: Featured</option>
+              <option value="price-asc">Price: Low to High</option>
+              <option value="price-desc">Price: High to Low</option>
+              <option value="rating">Top Rated</option>
+            </select>
+          </div>
+        </div>
+        <div class="products-grid" id="shopGrid"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============================
+     PRODUCT DETAIL PAGE
+     ============================ -->
+<div id="page-product" class="page">
+  <div class="container">
+    <div class="product-detail-layout" id="productDetailContent"></div>
+  </div>
+  <!-- Related Products -->
+  <section class="section" style="background:var(--cream);">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-subtitle">You May Also Like</p>
+        <h2 class="section-title">Related Products</h2>
+      </div>
+      <div class="products-grid" id="relatedProducts"></div>
+    </div>
+  </section>
+</div>
+
+<!-- ============================
+     CART PAGE
+     ============================ -->
+<div id="page-cart" class="page">
+  <div class="page-header">
+    <div class="container">
+      <p class="section-subtitle">Your Selections</p>
+      <h1 class="section-title">Shopping Cart</h1>
+    </div>
+  </div>
+  <div class="container">
+    <div id="cartContent"></div>
+  </div>
+</div>
+
+<!-- ============================
+     WISHLIST PAGE
+     ============================ -->
+<div id="page-wishlist" class="page">
+  <div class="page-header">
+    <div class="container">
+      <p class="section-subtitle">Your Favourites</p>
+      <h1 class="section-title">Wishlist</h1>
+    </div>
+  </div>
+  <div class="container">
+    <div id="wishlistContent"></div>
+  </div>
+</div>
+
+<!-- ============================
+     AUTH PAGE
+     ============================ -->
+<div id="page-auth" class="page">
+  <div class="auth-layout">
+    <div class="auth-visual">
+      <div class="auth-brand-text">Details<br>by <em>DK</em></div>
+      <div class="auth-brand-sub">Luxury Nail Art</div>
+      <p class="auth-tagline">Your journey to perfectly polished nails starts here. Join thousands of nail enthusiasts.</p>
+      <div style="margin-top:40px;display:flex;flex-direction:column;gap:14px;position:relative;z-index:1;">
+        <div style="background:rgba(255,255,255,0.15);border-radius:14px;padding:16px 20px;backdrop-filter:blur(10px);">
+          <div style="font-size:0.75rem;color:rgba(255,255,255,0.7);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:4px;">Exclusive Member Benefits</div>
+          <div style="color:white;font-size:0.88rem;">🎀 Early access to new collections</div>
+        </div>
+        <div style="background:rgba(255,255,255,0.15);border-radius:14px;padding:16px 20px;backdrop-filter:blur(10px);">
+          <div style="color:white;font-size:0.88rem;">✨ 10% off every order</div>
+        </div>
+        <div style="background:rgba(255,255,255,0.15);border-radius:14px;padding:16px 20px;backdrop-filter:blur(10px);">
+          <div style="color:white;font-size:0.88rem;">💫 Track orders & wishlist</div>
+        </div>
+      </div>
+    </div>
+    <div class="auth-form-wrap">
+      <div class="auth-form">
+        <div class="auth-tabs">
+          <button class="auth-tab active" onclick="switchAuthTab('login')">Login</button>
+          <button class="auth-tab" onclick="switchAuthTab('signup')">Create Account</button>
+        </div>
+        <!-- LOGIN -->
+        <div class="auth-panel active" id="loginPanel">
+          <div class="form-group">
+            <label class="form-label">Email Address</label>
+            <input type="email" class="form-input" placeholder="you@example.com" id="loginEmail">
+          </div>
+          <div class="form-group">
+            <label class="form-label">Password</label>
+            <input type="password" class="form-input" placeholder="Enter your password" id="loginPassword">
+            <button class="forgot-link" onclick="showToast('Password reset link sent!','success')">Forgot Password?</button>
+          </div>
+          <button class="auth-submit" onclick="handleLogin()">Sign In →</button>
+          <div class="or-divider"><span>or continue with</span></div>
+          <button class="social-auth-btn" onclick="handleSocialLogin('Google')">
+            <span style="font-size:1.1rem">G</span> Continue with Google
+          </button>
+        </div>
+        <!-- SIGNUP -->
+        <div class="auth-panel" id="signupPanel">
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label">First Name</label>
+              <input type="text" class="form-input" placeholder="First" id="signupFirst">
+            </div>
+            <div class="form-group">
+              <label class="form-label">Last Name</label>
+              <input type="text" class="form-input" placeholder="Last" id="signupLast">
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Email Address</label>
+            <input type="email" class="form-input" placeholder="you@example.com" id="signupEmail">
+          </div>
+          <div class="form-group">
+            <label class="form-label">Phone Number</label>
+            <input type="tel" class="form-input" placeholder="+91 98765 43210" id="signupPhone">
+          </div>
+          <div class="form-group">
+            <label class="form-label">Password</label>
+            <input type="password" class="form-input" placeholder="Create a strong password" id="signupPassword">
+          </div>
+          <button class="auth-submit" onclick="handleSignup()">Create Account →</button>
+          <div class="or-divider"><span>or sign up with</span></div>
+          <button class="social-auth-btn" onclick="handleSocialLogin('Google')">
+            <span style="font-size:1.1rem">G</span> Continue with Google
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============================
+     ABOUT PAGE
+     ============================ -->
+<div id="page-about" class="page">
+  <div class="about-hero">
+    <div class="container">
+      <p class="section-subtitle">Our Story</p>
+      <h1 class="section-title">Passion for Perfect Nails</h1>
+      <p>Details by DK was born from a simple belief: that nail art is a form of self-expression that deserves to be taken seriously.</p>
+    </div>
+  </div>
+  <div class="container">
+    <div class="about-layout">
+      <div class="about-img-stack">
+        <div class="about-img-main">💅</div>
+        <div class="about-img-accent">✨</div>
+        <div class="about-img-float">
+          <div class="float-num">500+</div>
+          <div class="float-label">Designs Created</div>
+        </div>
+      </div>
+      <div class="about-text">
+        <p class="section-subtitle">Meet the Creator</p>
+        <h2 class="section-title">The Woman Behind the Details</h2>
+        <p>Hi, I'm DK — a passionate nail artist based in Ludhiana, Punjab. What started as a hobby of painting my own nails grew into something I never imagined: a thriving nail brand that serves hundreds of women across India.</p>
+        <p>I've always believed that the smallest details can transform how you feel about yourself. That one perfect set of nails can give you the confidence to walk into any room. That's what Details by DK is about.</p>
+        <p>Every product we sell is something I've personally tested. Every design I create is crafted with hours of practice and genuine love for the art. This is not just a business — it's a calling.</p>
+        <div class="signature" style="color:var(--accent);">— Dimple K.</div>
+        <div style="display:flex;gap:16px;margin-top:30px;flex-wrap:wrap;">
+          <button class="btn btn-primary" onclick="showPage('booking')">Book With Me</button>
+          <button class="btn btn-outline" onclick="showPage('contact')">Get in Touch</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Values -->
+    <div class="section-header" style="margin-top:40px;">
+      <p class="section-subtitle">What We Stand For</p>
+      <h2 class="section-title">Our Values</h2>
+    </div>
+    <div class="values-grid" style="margin-bottom:80px;">
+      <div class="value-card">
+        <div class="value-icon">💎</div>
+        <div class="value-name">Premium Quality</div>
+        <div class="value-desc">We only use the finest materials and products, because your nails deserve nothing less than the best.</div>
+      </div>
+      <div class="value-card">
+        <div class="value-icon">🎨</div>
+        <div class="value-name">Creative Expression</div>
+        <div class="value-desc">Nail art is wearable art. We push creative boundaries to deliver designs that are truly one-of-a-kind.</div>
+      </div>
+      <div class="value-card">
+        <div class="value-icon">🌸</div>
+        <div class="value-name">Client Happiness</div>
+        <div class="value-desc">Your smile when you see your nails is our greatest reward. We don't rest until you're absolutely delighted.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============================
+     CONTACT PAGE
+     ============================ -->
+<div id="page-contact" class="page">
+  <div class="page-header">
+    <div class="container">
+      <p class="section-subtitle">We'd Love to Hear From You</p>
+      <h1 class="section-title">Get in Touch</h1>
+    </div>
+  </div>
+  <div class="container">
+    <div class="contact-layout">
+      <div class="contact-info">
+        <p class="section-subtitle">Contact Information</p>
+        <h2 class="section-title">Let's Connect</h2>
+        <p>Have a question, want to book a custom appointment, or just want to say hi? We're here for you. Reach out through any channel and we'll respond within 24 hours.</p>
+        <div class="contact-cards">
+          <div class="contact-card">
+            <div class="contact-card-icon">📍</div>
+            <div>
+              <div class="contact-card-title">Location</div>
+              <div class="contact-card-value">Ludhiana, Punjab, India</div>
+            </div>
+          </div>
+          <div class="contact-card">
+            <div class="contact-card-icon">📧</div>
+            <div>
+              <div class="contact-card-title">Email Us</div>
+              <div class="contact-card-value">hello@detailsbydk.com</div>
+            </div>
+          </div>
+          <div class="contact-card">
+            <div class="contact-card-icon">📱</div>
+            <div>
+              <div class="contact-card-title">Call / WhatsApp</div>
+              <div class="contact-card-value">+91 98765 43210</div>
+            </div>
+          </div>
+          <div class="contact-card">
+            <div class="contact-card-icon">🕐</div>
+            <div>
+              <div class="contact-card-title">Working Hours</div>
+              <div class="contact-card-value">Monday – Saturday: 10am – 7pm</div>
+            </div>
+          </div>
+        </div>
+        <button class="wa-btn" onclick="openWhatsApp()">
+          <span style="font-size:1.3rem">💬</span> Chat on WhatsApp
+        </button>
+        <div style="margin-top:24px;">
+          <a href="https://instagram.com/detailsby_dk" target="_blank" style="color:var(--accent);font-size:0.88rem;text-decoration:underline;">📸 Follow us @detailsby_dk</a>
+        </div>
+      </div>
+      <div class="contact-form-card">
+        <h3>Send Us a Message</h3>
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label">First Name</label>
+            <input type="text" class="form-input" placeholder="Your first name" id="contactFirst">
+          </div>
+          <div class="form-group">
+            <label class="form-label">Last Name</label>
+            <input type="text" class="form-input" placeholder="Your last name" id="contactLast">
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Email</label>
+          <input type="email" class="form-input" placeholder="you@example.com" id="contactEmail">
+        </div>
+        <div class="form-group">
+          <label class="form-label">Phone (Optional)</label>
+          <input type="tel" class="form-input" placeholder="+91 98765 43210" id="contactPhone">
+        </div>
+        <div class="form-group">
+          <label class="form-label">Subject</label>
+          <select class="form-input" id="contactSubject" style="cursor:pointer">
+            <option>General Inquiry</option>
+            <option>Booking / Appointment</option>
+            <option>Product Query</option>
+            <option>Order Issue</option>
+            <option>Custom Order</option>
+            <option>Collaboration</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Message</label>
+          <textarea class="form-textarea" placeholder="Tell us how we can help…" id="contactMessage"></textarea>
+        </div>
+        <button class="contact-submit" onclick="submitContact()">Send Message ✦</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============================
+     BOOKING PAGE
+     ============================ -->
+<div id="page-booking" class="page">
+  <div class="page-header">
+    <div class="container">
+      <p class="section-subtitle">Reserve Your Spot</p>
+      <h1 class="section-title">Book an Appointment</h1>
+      <p>Choose your service and pick a time that works for you</p>
+    </div>
+  </div>
+  <div class="container">
+    <div class="booking-layout">
+      <div>
+        <p class="section-subtitle" style="margin-bottom:20px;">Select a Service</p>
+        <div class="service-cards" id="serviceCards"></div>
+      </div>
+      <div class="booking-panel">
+        <h3>Choose Date & Time</h3>
+        <div class="calendar-simple">
+          <div class="cal-header">
+            <button class="cal-nav" onclick="changeMonth(-1)">‹</button>
+            <span class="cal-title" id="calTitle">May 2025</span>
+            <button class="cal-nav" onclick="changeMonth(1)">›</button>
+          </div>
+          <div class="cal-grid" id="calGrid"></div>
+        </div>
+        <p class="section-subtitle" style="margin-bottom:12px;">Available Times</p>
+        <div class="time-slots" id="timeSlots"></div>
+        <div class="form-group">
+          <label class="form-label">Your Name</label>
+          <input type="text" class="form-input" placeholder="Full name" id="bookName">
+        </div>
+        <div class="form-group">
+          <label class="form-label">Phone Number</label>
+          <input type="tel" class="form-input" placeholder="+91 98765 43210" id="bookPhone">
+        </div>
+        <button class="book-confirm-btn" onclick="confirmBooking()">Confirm Booking ✦</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============================
+     CHECKOUT PAGE
+     ============================ -->
+<div id="page-checkout" class="page">
+  <div class="page-header">
+    <div class="container">
+      <p class="section-subtitle">Almost There</p>
+      <h1 class="section-title">Checkout</h1>
+    </div>
+  </div>
+  <div class="container">
+    <div class="checkout-layout">
+      <div>
+        <!-- Stepper -->
+        <div class="checkout-steps" id="checkoutSteps">
+          <div class="step-item">
+            <div class="step-circle active" id="step1">1</div>
+            <div style="display:flex;flex-direction:column;">
+              <div class="step-label">Delivery</div>
+            </div>
+          </div>
+          <div class="step-line" id="line1"></div>
+          <div class="step-item">
+            <div class="step-circle" id="step2">2</div>
+            <div style="display:flex;flex-direction:column;">
+              <div class="step-label">Payment</div>
+            </div>
+          </div>
+          <div class="step-line" id="line2"></div>
+          <div class="step-item">
+            <div class="step-circle" id="step3">3</div>
+            <div style="display:flex;flex-direction:column;">
+              <div class="step-label">Confirm</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Step 1: Delivery -->
+        <div id="checkoutStep1">
+          <div class="checkout-section">
+            <h4>Delivery Information</h4>
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label">First Name</label>
+                <input type="text" class="form-input" placeholder="First">
+              </div>
+              <div class="form-group">
+                <label class="form-label">Last Name</label>
+                <input type="text" class="form-input" placeholder="Last">
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Address</label>
+              <input type="text" class="form-input" placeholder="Street address">
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label">City</label>
+                <input type="text" class="form-input" placeholder="City">
+              </div>
+              <div class="form-group">
+                <label class="form-label">PIN Code</label>
+                <input type="text" class="form-input" placeholder="141001">
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Phone</label>
+              <input type="tel" class="form-input" placeholder="+91 98765 43210">
+            </div>
+          </div>
+          <button class="btn btn-primary" style="width:100%;justify-content:center;" onclick="nextCheckoutStep(2)">Continue to Payment →</button>
+        </div>
+
+        <!-- Step 2: Payment -->
+        <div id="checkoutStep2" style="display:none;">
+          <div class="checkout-section">
+            <h4>Payment Method</h4>
+            <div class="payment-methods">
+              <div class="payment-method selected" onclick="selectPayment(this)">
+                <div class="pm-icon">💳</div>
+                <div class="pm-name">Card</div>
+              </div>
+              <div class="payment-method" onclick="selectPayment(this)">
+                <div class="pm-icon">📱</div>
+                <div class="pm-name">UPI</div>
+              </div>
+              <div class="payment-method" onclick="selectPayment(this)">
+                <div class="pm-icon">🏦</div>
+                <div class="pm-name">Net Banking</div>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Card Number</label>
+              <input type="text" class="form-input" placeholder="1234 5678 9012 3456" maxlength="19" id="cardNum" oninput="formatCard(this)">
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label">Expiry</label>
+                <input type="text" class="form-input" placeholder="MM/YY" maxlength="5">
+              </div>
+              <div class="form-group">
+                <label class="form-label">CVV</label>
+                <input type="password" class="form-input" placeholder="•••" maxlength="3">
+              </div>
+            </div>
+          </div>
+          <div style="display:flex;gap:12px;">
+            <button class="btn btn-outline" onclick="nextCheckoutStep(1)" style="flex:1;justify-content:center;">← Back</button>
+            <button class="btn btn-primary" onclick="nextCheckoutStep(3)" style="flex:2;justify-content:center;">Review Order →</button>
+          </div>
+        </div>
+
+        <!-- Step 3: Confirm -->
+        <div id="checkoutStep3" style="display:none;">
+          <div class="checkout-section" style="text-align:center;padding:60px 32px;">
+            <div style="font-size:4rem;margin-bottom:24px;">🎀</div>
+            <h4 style="font-family:var(--font-display);font-size:1.8rem;font-weight:400;margin-bottom:12px;">Order Confirmed!</h4>
+            <p style="color:var(--muted);margin-bottom:30px;">Thank you for your order! We'll send you a confirmation email shortly. Your nails are on their way! 💅</p>
+            <button class="btn btn-primary" onclick="showPage('shop')" style="margin:0 auto;">Continue Shopping</button>
+          </div>
+        </div>
+      </div>
+      <!-- Order Summary -->
+      <div class="checkout-summary">
+        <div class="summary-title">Order Summary</div>
+        <div id="checkoutItems"></div>
+        <div class="divider"></div>
+        <div class="summary-row"><span>Subtotal</span><span id="checkoutSubtotal">₹0</span></div>
+        <div class="summary-row"><span>Shipping</span><span style="color:#7dc98f">Free</span></div>
+        <div class="summary-row total"><span>Total</span><span id="checkoutTotal">₹0</span></div>
+        <div style="margin-top:16px;padding:12px;background:var(--blush);border-radius:var(--radius-sm);font-size:0.78rem;color:var(--accent);text-align:center;">
+          🔒 Secured with 256-bit SSL Encryption
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
